@@ -34,8 +34,9 @@ OR:
 2) Boot it, SSH to it, Bring down setup and test scripts:
 ```
 wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/setup_gopigo3_on_32-bit_Bullseye.sh
-wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/test_gopigo3_installation.sh
+wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/test_read_info.sh
 ```
+- (wget any other tests interested in running)  
 
 3) Run setup script
 ```
