@@ -147,7 +147,7 @@ sudo systemctl start gpg3_power.service
 
 echo "Skipping autodetect robot"
 
-echo "Setup GoPiGo3 and DI_Sensors Python3 eggs
+echo "Setup GoPiGo3 and DI_Sensors Python3 eggs"
 cd /home/pi/Dexter/GoPiGo3/Software/Python
 sudo python3 setup.py install
 cd /home/pi/Dexter/DI_Sensors/Python
