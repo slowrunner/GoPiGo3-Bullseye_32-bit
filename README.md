@@ -1,8 +1,22 @@
 # GoPiGo3-Bullseye_32-bit
 
-My non-official, non-supported setup of GoPiGo3 software on PiOS Bullseye 32-bit
-  (32-bit version only!)
+My non-official, non-supported setup of GoPiGo3 software on PiOS Bullseye 32-bit  
+  (32-bit version only!)  
+  
+# Supported and recommended operating systems   
 
+The official "GoPiGo OS" operating system (version 3.0.2 29Mar2022)  
+
+- Burn this to your card: https://gopigo.io/downloads/gopigo_os  
+- Follow these instructions: https://gopigo.io/gopigo-os-v-3-0-2/  
+
+OR:  
+
+- Raspberry Pi OS (Legacy) with Desktop (or Lite/no desktop)  
+   from https://www.raspberrypi.com/software/operating-systems/  
+
+
+# IF YOU ABSOLUTELY MUST, MUST HAVE PiOS BULLSEYE - WARNING: UNSUPPORTED and NOT-RECOMMENDED
 
 1) Setup your PiOS Bullseye 32-bit SDcard (Use Raspberry Pi Imager 1.7.2 or higher)
 - Click on Advance Options "Gear"
