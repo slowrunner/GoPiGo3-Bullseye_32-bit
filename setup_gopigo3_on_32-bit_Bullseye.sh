@@ -90,8 +90,39 @@ rm pigpiod.service
 echo "Remove the pigpio-master files"
 sudo rm -r pigpio-master/
 
+echo "Enable SPI and I2C"
+if grep -q "#dtparam=spi=on" /boot/config.txt; then
+        sudo sed -i 's/#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
+        echo "SPI enabled"
+    elif grep -q "dtparam=spi=on" /boot/config.txt; then
+        echo "SPI already enabled"
+    else
+        sudo sh -c "echo 'dtparam=spi=on' >> /boot/config.txt"
+        echo "SPI enabled"
+    fi
 
-echo "Get R4R_Tools (for I2C_mutex)
+if grep -q "#dtparam=i2c_arm=on" /boot/config.txt; then
+        sudo sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/config.txt
+        echo "I2C  enabled"
+    elif grep -q "dtparam=i2c_arm=on" /boot/config.txt; then
+        echo "I2C already enabled"
+    else
+        sudo sh -c "echo 'dtparam=i2c_arm=on' >> /boot/config.txt"
+        echo "I2C enabled"
+    fi
+
+if grep -q "#dtparam=i2c1=on" /boot/config.txt; then
+        sudo sed -i 's/#dtparam=i2c1=on/dtparam=i2c1=on/g' /boot/config.txt
+        echo "I2C_1 enabled"
+    elif grep -q "dtparam=i2c1=on" /boot/config.txt; then
+        echo "I2C_1 already enabled"
+    else
+        sudo sh -c "echo 'dtparam=i2c1=on' >> /boot/config.txt"
+        echo "I2C_1 enabled"
+    fi
+    
+    
+echo "Get R4R_Tools (for I2C_mutex)"
 sudo git clone https://github.com/DexterInd/RFR_Tools.git /home/pi/Dexter/lib/Dexter/RFR_Tools
 sudo apt-get install libffi-dev
 cd /home/pi/Dexter/lib/Dexter//RFR_Tools/miscellaneous/
@@ -122,38 +153,7 @@ sudo python3 setup.py install
 cd /home/pi/Dexter/DI_Sensors/Python
 sudo python3 setup.py install
 
-echo "Enable SPI and I2C"
-if grep -q "#dtparam=spi=on" /boot/config.txt; then
-        sudo sed -i 's/#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
-        echo "SPI enabled"
-    elif grep -q "dtparam=spi=on" /boot/config.txt; then
-        echo "SPI already enabled"
-    else
-        sudo sh -c "echo 'dtparam=spi=on' >> /boot/config.txt"
-        echo "SPI enabled"
-    fi
-pi@bullsi32:~ $ more s2.sh
-#! /bin/bash
 
-if grep -q "#dtparam=i2c_arm=on" /boot/config.txt; then
-        sudo sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/config.txt
-        echo "I2C  enabled"
-    elif grep -q "dtparam=i2c_arm=on" /boot/config.txt; then
-        echo "I2C already enabled"
-    else
-        sudo sh -c "echo 'dtparam=i2c_arm=on' >> /boot/config.txt"
-        echo "I2C enabled"
-    fi
-
-if grep -q "#dtparam=i2c1=on" /boot/config.txt; then
-        sudo sed -i 's/#dtparam=i2c1=on/dtparam=i2c1=on/g' /boot/config.txt
-        echo "I2C_1 enabled"
-    elif grep -q "dtparam=i2c1=on" /boot/config.txt; then
-        echo "I2C_1 already enabled"
-    else
-        sudo sh -c "echo 'dtparam=i2c1=on' >> /boot/config.txt"
-        echo "I2C_1 enabled"
-    fi
 
 
 
