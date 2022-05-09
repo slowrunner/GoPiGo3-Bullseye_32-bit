@@ -43,6 +43,20 @@ sudo git clone https://github.com/DexterInd/DI_Sensors.git /home/pi/Dexter/DI_Se
 echo "Put copy of serial number file where expected"
 cp ~/Dexter/GoPiGo3/Install/list_of_serial_numbers.pkl ~/Dexter/.list_of_serial_numbers.pkl
 
+echo "Setup espeak-ng for ip feedback"
+sudo apt install espeak-ng
+
+echo "Bring down ip_feedback and service definition"
+wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/etc_systemd_system.ip_feedback.service
+wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/ip_feedback.sh
+wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/setup_ip_feedback.sh
+
+chmod 777 ip_feedback.sh
+chmod 777 setup_ip_feedback.sh
+
+echo "setup ip feedback service"
+sudo ./setup_ip_feedback.sh
+
 echo "Get and make particular pigpio package required by GoPiGo3"
 wget https://github.com/joan2937/pigpio/archive/master.zip
 unzip master.zip
