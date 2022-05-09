@@ -46,17 +46,11 @@ cp ~/Dexter/GoPiGo3/Install/list_of_serial_numbers.pkl ~/Dexter/.list_of_serial_
 echo "Setup espeak-ng for ip feedback"
 sudo apt install espeak-ng
 
-echo "Bring down ip_feedback and service definition"
-wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/etc_systemd_system.ip_feedback.service
-wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/ip_feedback.sh
+echo "Bring down ip_feedback setup script"
 wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/setup_ip_feedback.sh
-
-chmod 777 ip_feedback.sh
 chmod 777 setup_ip_feedback.sh
 
-cp ip_feedback.sh /home/pi
-
-echo "setup ip feedback service"
+echo "Run ip feedback setup script"
 sudo ./setup_ip_feedback.sh
 
 echo "Get and make particular pigpio package required by GoPiGo3"
