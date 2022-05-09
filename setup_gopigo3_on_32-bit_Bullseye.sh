@@ -54,6 +54,8 @@ wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/s
 chmod 777 ip_feedback.sh
 chmod 777 setup_ip_feedback.sh
 
+cp ip_feedback.sh /home/pi
+
 echo "setup ip feedback service"
 sudo ./setup_ip_feedback.sh
 
