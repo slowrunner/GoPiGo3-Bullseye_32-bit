@@ -50,7 +50,7 @@ sudo shutdown -h now
 
 5) Boot it in your GoPiGo3 robot, SSH to it, test it:
 ```
-bash test_gopigo3_installation.sh
+bash test_read_info.sh
 ```
 
 Visit https://forum.dexterindustries.com/ to share your GoPiGo3 robot experience
