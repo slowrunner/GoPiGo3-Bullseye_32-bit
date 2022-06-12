@@ -15,6 +15,9 @@ check_if_run_with_pi() {
 echo "Check running as user pi"
 check_if_run_with_pi
 
+echo "Install needed python packages and git"
+sudo apt-get install --no-install-recommends python3-pip python3-numpy python3-curtsies git
+
 echo "Check default python"
 python --version
 
@@ -33,9 +36,6 @@ sudo git clone http://www.github.com/DexterInd/GoPiGo3.git /home/pi/Dexter/GoPiG
 
 echo "Install DI update_tools"
 sudo curl -kL dexterindustries.com/update_tools | bash -s -- --system-wide --use-python3-exe-too --install-deb-debs --install-python-package
-
-echo "Install needed python packages"
-sudo apt-get install --no-install-recommends python3-pip python3-numpy python3-curtsies
 
 echo "Bring down DI_Sensors code"
 sudo git clone https://github.com/DexterInd/DI_Sensors.git /home/pi/Dexter/DI_Sensors
