@@ -31,24 +31,31 @@ OR:
 - **Choose PiOS Bullseye 32-bit**
 
 
-2) Boot it, SSH to it, Bring down setup and test scripts:
+2) Boot it, WAIT...WAIT till see red light go off then back on, WAIT MORE...WAIT till green light becomes periodic.
+3) SSH to it, Update/Upgrade
+```
+sudo apt update
+sudo apt upgrade
+sudo reboot
+```
+4) Bring down setup and test scripts:
 ```
 wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/setup_gopigo3_on_32-bit_Bullseye.sh
 wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/test_read_info.sh
 ```
 - (wget any other tests interested in running)  
 
-3) Run setup script
+5) Run setup script
 ```
 bash setup_gopigo3_on_32-bit_Bullseye.sh
 ```
 
-4) SHUTDOWN WITH POWER OFF
+6) SHUTDOWN WITH POWER OFF
 ```
 sudo shutdown -h now
 ```
 
-5) Boot it in your GoPiGo3 robot, SSH to it, test it:
+7) Boot it in your GoPiGo3 robot, SSH to it, test it:
 ```
 bash test_read_info.sh
 ```
