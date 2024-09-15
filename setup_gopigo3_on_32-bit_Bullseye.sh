@@ -16,7 +16,7 @@ echo "Check running as user pi"
 check_if_run_with_pi
 
 echo "Install needed python packages and git"
-sudo apt-get install --no-install-recommends python3-pip python3-numpy python3-curtsies git
+sudo apt-get install -y --no-install-recommends python3-pip python3-numpy python3-curtsies git
 
 echo "Check default python"
 python --version
@@ -44,7 +44,7 @@ echo "Put copy of serial number file where expected"
 cp ~/Dexter/GoPiGo3/Install/list_of_serial_numbers.pkl ~/Dexter/.list_of_serial_numbers.pkl
 
 echo "Setup espeak-ng for ip feedback"
-sudo apt install espeak-ng
+sudo apt install -y espeak-ng
 
 echo "Bring down ip_feedback setup script"
 wget https://raw.githubusercontent.com/slowrunner/GoPiGo3-Bullseye_32-bit/main/setup_ip_feedback.sh
@@ -134,7 +134,7 @@ if grep -q "#dtparam=i2c1=on" /boot/config.txt; then
     
 echo "Get R4R_Tools (for I2C_mutex)"
 sudo git clone https://github.com/DexterInd/RFR_Tools.git /home/pi/Dexter/lib/Dexter/RFR_Tools
-sudo apt-get install libffi-dev
+sudo apt-get install -y libffi-dev
 cd /home/pi/Dexter/lib/Dexter//RFR_Tools/miscellaneous/
 sudo python3 setup.py install
 
