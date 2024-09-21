@@ -28,7 +28,7 @@ OR:
   - Set locale: America/New_York, Keyboard: us
   - Eject media when done
   - Enable telemetry
-- **Choose PiOS Bullseye 32-bit**
+- **Choose PiOS Bullseye 32-bit**  (reported to work for 64-bit version)  
 
 
 2) Boot it, WAIT...WAIT till see red light go off then back on, WAIT MORE...WAIT till green light becomes periodic.
